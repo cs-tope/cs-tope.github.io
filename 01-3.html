@@ -1,0 +1,220 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>CS 180 - Foundations of Artificial Intelligence</title>
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+		<link rel="stylesheet" href="/css/reveal.css">
+		<link rel="stylesheet" href="/css/theme/tope.css" id="theme">
+
+		<!-- Code syntax highlighting -->
+		<link rel="stylesheet" href="/lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? '/css/print/pdf.css' : '/css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+		
+		<script src="/js/Chart.js"></script>
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<section class="center">
+					<h5 style="margin-bottom: 0px;">University of the Philippines, Diliman</h5>
+					<h4 style="letter-spacing: 5px;">Department of Computer Science</h4>
+					<br/>
+					<h2>CS 180: <span class="highlight">Introduction to Artificial Intelligence</span></h2>
+					<h4 style="color: #737373;">Applications of Artificial Intelligence</h4>
+				</section>
+				<section>
+					<h2><span class="highlight">Foundations of</span> Artificial Intelligence</h2>
+					<h3>Logic and Philosophy</h3>
+					Propositional Logic</p>
+					Reasoning</p>
+				</section>
+				<section>
+					<h2><span class="highlight">Foundations of</span> Artificial Intelligence</h2>
+					<h3>Mathematics</h3>
+					Algorithms</p>
+					Decidability and Computability</p>
+					Tractability</p>
+					Probability</p>
+				</section>
+				<section>
+					<h2><span class="highlight">Foundations of</span> Artificial Intelligence</h2>
+					<h3>Economics</h3>
+					Utility and marginal utility</p>
+					Decision Theory</p>
+					Game Theory</p>
+				</section>
+				<section>
+					<h2><span class="highlight">Foundations of</span> Artificial Intelligence</h2>
+					<h3>Neuroscience</h3>
+					Neurons</p>
+					Data Propagation</p>
+				</section>
+				<section>
+					<h2><span class="highlight">Foundations of</span> Artificial Intelligence</h2>
+					<h3>Psychology</h3>
+					Behaviorism</p>
+					Cognitive Science</p>
+				</section>
+				<section>
+					<h2><span class="highlight">Foundations</span> of Artificial Intelligence</h2>
+					<h3>Other Fields</h3>
+					Computer Engineering</p>
+					Control Theory and Cybernetics</p>
+					Linguistics</p>
+				</section>
+				<section>
+					<h2><span class="highlight">Approaches in</span> AI</h2>
+					Thinking Humanly</p>
+					Thinking Rationally</p>
+					Acting Humanly</p>
+					Acting Rationally</p>
+				</section>
+				<section>
+					<h2 class="green">Thinking Humanly</h2>
+					<blockquote class="fragment">
+						<p>The exciting new effort to make computers think... machines with minds, in the full and literal sense.</p>
+						<cite>Haugeland, 1985</cite>
+					</blockquote>
+					
+					<blockquote class="fragment">
+						<p>[The automation of] activities that we associate with human thinking, activities such as decision-making, problem solving, learning...</p>
+						<cite>Bellman, 1978</cite>
+					</blockquote>
+				</section>
+				<section>
+					<h2><span class="highlight">Thinking Humanly</span>: The Cognitive Modelling Approach</h2>
+					Cognitive Science</p>
+					<i>A precise theory of the mind can be expressed (modelled) as a computer program.</i></p>
+				</section>
+				<section>
+					<h2 class="green">Thinking Rationally</h2>
+					<blockquote class="fragment">
+						<p>The study of mental faculties through the use of computational models.</p>
+						<cite>Charniak and McDermott, 1985</cite>
+					</blockquote>		
+					<blockquote class="fragment">
+						<p>The study of the computations that make it possible to perceive, reason, and act.</p>
+						<cite>Winston, 1992</cite>
+					</blockquote>
+				</section>
+				<section>
+					<h2><span class="highlight">Thinking Rationally</span>: The "Laws of Thought" Approach</h2>
+					Logic and syllogisms</p>
+					Goal: make correct inferences</p>
+					Difficult to transform informal knowledge to logical statements (i.e. uncertainties)</p>
+					Computationally expensive</p>
+				</section>
+				<section>
+					<h2 class="green">Acting Humanly</h2>
+					<blockquote class="fragment">
+						<p>The art of creating machines that perform functions that require intelligence when performed by people.</p>
+						<cite>Kurzweil, 1990</cite>
+					</blockquote>		
+					<blockquote class="fragment">
+						<p>The study of how to make computers do things at which, at the moment, people are better.</p>
+						<cite>Rich and Knight, 1991</cite>
+					</blockquote>
+				</section>
+				<section>
+					<h2><span class="highlight">Acting Humanly</span>: The Turing Test Approach</h2>
+					<h3>The Turing Test</h3>
+					proposed by Alan Turing to provide a satisfactory operational definition of intelligence</p>
+					A computer passes the test if a human interrogator, after posing some written questions, cannot tell whether the written responses come from a person or from a computer</p>
+				</section>
+				<section>
+					<h2><span class="highlight">Acting Humanly</span>: The Turing Test Approach</h2>
+					<h3>For a computer to pass the Turing Test, it needs to have the following:</h3>
+					Natural Language Processing</p>
+					Knowledge Representation</p>
+					Automated Reasoning</p>
+					Machine Learning</p>
+				</section>
+				<section>
+					<h2><span class="highlight">Acting Humanly</span>: The Turing Test Approach</h2>
+					<h3>Total Turing Test</h3>
+					includes a video signal to test the perceptual abilities</p>
+					Computer Vision</p>
+					Robotics</p>
+				</section>
+				<section>
+					<h2><span class="highlight">Acting Humanly</span>: The Turing Test Approach</h2>
+					Union of the six disciplines of AI</p>
+					AI researchers, however, devote little effort to pass the Turing Test</p>
+					Understanding the underlying principles is more important than duplicating an exemplar</p>
+				</section>
+				<section>
+					<h2 class="green">Acting Rationally</h2>
+					<blockquote class="fragment">
+						<p>Computational Intelligence is the study of the design of intelligent agents.</p>
+						<cite>Poole et al., 1998</cite>
+					</blockquote>		
+					<blockquote class="fragment">
+						<p>AI... is concerned with intelligent behavior in artifacts.</p>
+						<cite>Nilsson, 1998</cite>
+					</blockquote>
+				</section>
+				<section>
+					<h2><span class="highlight">Acting Rationally</span>: The Rational Agent Approach</h2>
+					An agent is something that acts</p>
+					Goal: Act so as to achieve the best outcome, or if under uncertainty, the best expected outcome</p>
+					More general than the “laws of thought” approach</p>
+					Mathematically well-defined</p>
+				</section>
+			</div>
+		</div>
+
+		<script src="/lib/js/head.min.js"></script>
+		<script src="/js/reveal.js"></script>
+
+		<script>
+
+			// Full list of configuration options available at:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+				width: 1280,
+				height: 720,
+
+				transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+				// Optional reveal.js plugins
+				dependencies: [
+					{ src: '/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: '/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: '/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: '/plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: '/plugin/zoom-js/zoom.js', async: true },
+					{ src: '/plugin/notes/notes.js', async: true }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>
