@@ -86,12 +86,6 @@ span.legend-color {
 .text-left {
   text-align: left !important; }
 
-table td, table th {
-  color: #333; }
-
-th:last-child, td:last-child {
-  color: green; }
-
 /*********************************************
  * GLOBAL STYLES
  *********************************************/
@@ -256,7 +250,6 @@ body {
   color: #DCDCDC; }
 
 .reveal table {
-  margin: auto;
   border-collapse: collapse;
   border-spacing: 0; }
 
