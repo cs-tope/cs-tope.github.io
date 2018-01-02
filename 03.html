@@ -1,0 +1,320 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>CS 180 - Agents</title>
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+		<link rel="stylesheet" href="/css/reveal.css">
+		<link rel="stylesheet" href="/css/theme/tope.css" id="theme">
+
+		<!-- Code syntax highlighting -->
+		<link rel="stylesheet" href="/lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? '/css/print/pdf.css' : '/css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+		
+		<script src="/js/Chart.js"></script>
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<section>
+					<h5 style="margin-bottom: 0px;">University of the Philippines, Diliman</h5>
+					<h4 style="letter-spacing: 5px;">Department of Computer Science</h4>
+					<br/>
+					<h2>CS 180: <span class="highlight">Introduction to Artificial Intelligence</span></h2>
+					<h4 style="color: #737373;">Agents</h4>
+				</section>
+				<section>
+					<h2 class="highlight">Agents</h2>
+					<p>interacts with an <b>environment</b></p>
+					<p>uses <b>sensors</b> to perceive</p>
+					<p>uses <b>actuators</b> to act</p>
+					<p>has <b>control policy</b> connecting the sensors and actuators</p>
+				</section>
+				<section>
+					<h2><span class="highlight">Rational</span> Agent</h2>
+					<p>For each possible <b>percept sequence</b>, a rational agent should select an action 
+					that is expected to maximize its <b>performance measure</b>, given the <b>evidence</b>
+					provided by the percept sequence and whatever <b>knowledge</b> the agent has.</p>
+				</section>
+				<section>
+					<h2 class='highlight'>Environment</h2>
+					<p>Environments are the problems to which rational agents are the solutions.</p>
+				</section>
+				<section>
+					<h2 class="highlight">PEAS</h2>
+					<h3>Performance Measure, Environment, Actuators, Sensors</h3>
+					<p>rough design of an agent.</p>
+				</section>
+				<section>
+					<h2 class="highlight">PEAS</h2>
+					<h3>Satellite Image Analysis System</h3>
+					<table>
+						<tr>
+							<th>Performance Measure</th>
+							<th>Environment</th>
+							<th>Actuators</th>
+							<th>Sensors</th>
+						</tr>
+						<tr>
+							<td>correct image classification</td>
+							<td>Downlink from orbiting satellite</td>
+							<td>Display of scene categorization</td>
+							<td>Array of pixel values</td>
+						</tr>
+					</table>
+				</section>
+				<section>
+					<h2>PEAS</h2>
+					<h3>Medical Diagnosis System</h3>
+					<table>
+						<tr>
+							<th>Performance Measure</th>
+							<th>Environment</th>
+							<th>Actuators</th>
+							<th>Sensors</th>
+						</tr>
+						<tr>
+							<td>Correct disease diagnosis</td>
+							<td>Patient, hospital, staff, records</td>
+							<td>Display of diagnosis, treatment, tests, referrals</td>
+							<td>Direct measurements or keyboard entry of symptoms, findings, etc.</td>
+						</tr>
+					</table>
+				</section>
+				<section>
+					<h2><span class="highlight">Properties of</span> Task Environments</h2>
+					<p>Fully observable vs Partially observable</p>
+					<p>Single agent vs. Multiagent</p>
+					<p>Deterministic vs Stochastic</p>
+					<p>Episodic vs Sequential</p>
+					<p>Static vs Dynamic</p>
+					<p>Discrete vs Continuous</p>
+					<p>Known vs Unknown</p>
+				</section>
+				<section>
+					<h2><span class="highlight">Properties of</span> Task Environments</h2>
+					<h3>Fully observable vs Partially observable</h3>
+					<p>Access to the complete state of the environment</p>
+				</section>
+				<section>
+					<h2><span class="highlight">Properties of</span> Task Environments</h2>
+					<h3>Single agent vs. Multiagent</h3>
+					<p>competition</p>
+					<p>adversaries</p>
+				</section>
+				<section>
+					<h2><span class="highlight">Properties of</span> Task Environments</h2>
+					<h3>Deterministic vs Stochastic</h3>
+					<p>next state depends on the current state and the action taken by the agent</p>
+				</section>
+				<section>
+					<h2><span class="highlight">Properties of</span> Task Environments</h2>
+					<h3>Episodic vs Sequential</h3>
+					<p>Sequential - short-term actions have long-term consequences</p>
+					<p>Episodic - no need to think ahead; one-time-only actions</p>
+				</section>
+				<section>
+					<h2><span class="highlight">Properties of</span> Task Environments</h2>
+					<h3>Static vs Dynamic</h3>
+							<p>Change in the environment while the agent deliberates for an action</p>
+							<p>Semidynamic - environment does not change, but the performance measure of the agent</p>
+				</section>
+				<section>
+					<h2><span class="highlight">Properties of</span> Task Environments</h2>
+					<h3>Discrete vs Continuous</h3>
+							<p>Number of states in the environment</p>
+				</section>
+				<section>
+					<h2><span class="highlight">Properties of</span> Task Environments</h2>
+					<h3>Known vs Unknown</h3>
+							<p>Knowledge of the governing 'rules' of the environment</p>
+				</section>
+				<section>
+					<h2><span class="highlight">Example of</span> Task Environments</h2>
+					<h3>Chess</h3>
+					<table>
+						<tr>
+							<th>Observability</th>
+							<th>Agents</th>
+							<th>Deterministic?</th>
+							<th>Episodic?</th>
+							<th>Static?</th>
+							<th>Discrete?</th>
+						</tr>
+						<tr>
+							<td class="fragment">Fully Observable</td>
+							<td class="fragment">Multi-agent</td>
+							<td class="fragment">Deterministic</td>
+							<td class="fragment">Sequential</td>
+							<td class="fragment">Semi-dynamic</td>
+							<td class="fragment">Discrete</td>
+						</tr>
+					</table>
+				</section>
+				<section>
+					<h2><span class="highlight">Example of</span> Task Environments</h2>
+					<h3>Medical Diagnosis</h3>
+					<table>
+						<tr>
+							<th>Observability</th>
+							<th>Agents</th>
+							<th>Deterministic?</th>
+							<th>Episodic?</th>
+							<th>Static?</th>
+							<th>Discrete?</th>
+						</tr>
+						<tr>
+							<td class="fragment">Partially Observable</td>
+							<td class="fragment">Single agent</td>
+							<td class="fragment">Stochastic</td>
+							<td class="fragment">Sequential</td>
+							<td class="fragment">Dynamic</td>
+							<td class="fragment">Continuous</td>
+						</tr>
+					</table>
+				</section>
+				<section>
+					<h2><span class="highlight">Example of</span> Task Environments</h2>
+					<h3>Image Analysis</h3>
+					<table>
+						<tr>
+							<th>Observability</th>
+							<th>Agents</th>
+							<th>Deterministic?</th>
+							<th>Episodic?</th>
+							<th>Static?</th>
+							<th>Discrete?</th>
+						</tr>
+						<tr>
+							<td class="fragment">Fully Observable</td>
+							<td class="fragment">Single agent</td>
+							<td class="fragment">Deterministic</td>
+							<td class="fragment">Episodic</td>
+							<td class="fragment">Semi-dynamic</td>
+							<td class="fragment">Continuous</td>
+						</tr>
+					</table>
+				</section>
+				<section>
+					<h2><span class="highlight">Example of</span> Task Environments</h2>
+					<h3>Poker</h3>
+					<table>
+						<tr>
+							<th>Observability</th>
+							<th>Agents</th>
+							<th>Deterministic?</th>
+							<th>Episodic?</th>
+							<th>Static?</th>
+							<th>Discrete?</th>
+						</tr>
+						<tr>
+							<td class="fragment">Partially Observable</td>
+							<td class="fragment">Multi-agent</td>
+							<td class="fragment">Stochastic</td>
+							<td class="fragment">Sequential</td>
+							<td class="fragment">Static</td>
+							<td class="fragment">Discrete</td>
+						</tr>
+					</table>
+				</section>
+				<section>
+					<h2><span class="highlight">Example of</span> Task Environments</h2>
+					<h3><i>Panliligaw</i></h3>
+					<table>
+						<tr>
+							<th>Observability</th>
+							<th>Agents</th>
+							<th>Deterministic?</th>
+							<th>Episodic?</th>
+							<th>Static?</th>
+							<th>Discrete?</th>
+						</tr>
+						<tr>
+							<td><br /></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+						</tr>
+					</table>
+				</section>
+				<section>
+					<h2><span class="highlight">Example of</span> Task Environments</h2>
+					<h3><i>[Trying to] Pass CS 180</i></h3>
+					<table>
+						<tr>
+							<th>Observability</th>
+							<th>Agents</th>
+							<th>Deterministic?</th>
+							<th>Episodic?</th>
+							<th>Static?</th>
+							<th>Discrete?</th>
+						</tr>
+						<tr>
+							<td><br /></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+						</tr>
+					</table>
+				</section>
+			</div>
+		</div>
+
+		<script src="/lib/js/head.min.js"></script>
+		<script src="/js/reveal.js"></script>
+
+		<script>
+
+			// Full list of configuration options available at:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+				width: 1280,
+				height: 720,
+
+				transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+				// Optional reveal.js plugins
+				dependencies: [
+					{ src: '/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: '/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: '/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: '/plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: '/plugin/zoom-js/zoom.js', async: true },
+					{ src: '/plugin/notes/notes.js', async: true }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>
