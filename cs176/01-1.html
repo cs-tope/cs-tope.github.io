@@ -1,0 +1,312 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>CS 176 - Digital Image Processing</title>
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+		<link rel="stylesheet" href="/css/reveal.css">
+		<link rel="stylesheet" href="/css/theme/tope.css" id="theme">
+
+		<!-- Code syntax highlighting -->
+		<link rel="stylesheet" href="/lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? '/css/print/pdf.css' : '/css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+		
+		<script src="/js/Chart.js"></script>
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<section class="">
+					<h5 style="margin-bottom: 0px;">University of the Philippines, Diliman</h5>
+					<h4 style="letter-spacing: 5px;">Department of Computer Science</h4>
+					<br/>
+					<h2>CS 176: <span class="highlight">Digital Image Processing</span></h2>
+					<h4 style="color: #737373;">Digital Image Fundamentals</h4>
+				</section>
+				<section>
+					<h2 class="highlight">Objectives</h2>
+					<ol>
+						<li>To define the scope of image processing</li>
+						<li>To give historical perspective to image processing</li>
+						<li>To examine the applications of image processing</li>
+					</ol>
+				</section>
+				<section>
+					<h2><span class="highlight">What is</span> Image Processing<span class="highlight">?</span></h2>
+					<h3>Image</h3>
+					<p>An optical representation/reproduction of an object</p>
+				</section>
+				<section>
+					<h2><span class="highlight">What is</span> Image Processing<span class="highlight">?</span></h2>
+					<h3>Image</h3>
+					<p>f(x,y) : gray level at (x,y)</p>
+				</section>
+				<section>
+					<h2><span class="highlight">What is</span> Image Processing<span class="highlight">?</span></h2>
+					<p>DIP encompasses processes whose inputs are images, processes that extract attributes from images</p>
+					<p>Image Processing vs Image Analysis vs Computer Vision</p>
+				</section>
+				<section>
+					<h2>Origins <span class="highlight"> of Digital Image Processing</span></h2>
+					<p>improvement of visual quality of newsprints</p>
+					<p>trans-atlantic images</p>
+					<img src='/img/transatlantic.jpg' />
+				</section>
+				<section>
+					<h2>Fields that use <span class="highlight"> Digital Image Processing</span></h2>
+					<h3>Nuclear Medicine</h3>
+					<img src='/img/nuclear.jpg' />
+				</section>
+				<section>
+					<h2>Fields that use <span class="highlight"> Digital Image Processing</span></h2>
+					<h3>Medical Diagnosis</h3>
+					<img src='/img/xray.jpg' />
+				</section>
+				<section>
+					<h2>Fields that use <span class="highlight"> Digital Image Processing</span></h2>
+					<h3>Microscopy</h3>
+					<img src='/img/microscopy.png' />
+				</section>
+				<section>
+					<h2>Fields that use <span class="highlight"> Digital Image Processing</span></h2>
+					<h3>Plate Reading</h3>
+					<img src='/img/licenseplate.jpg' height=300 />
+				</section>
+				<section>
+					<h2>Fields that use <span class="highlight"> Digital Image Processing</span></h2>
+					<h3>Remote Sensing</h3>
+					<img src='/img/remotesensing.jpg' height=300  />
+				</section>
+				<section>
+					<h2>Fields that use <span class="highlight"> Digital Image Processing</span></h2>
+					<h3>RADAR</h3>
+					<img src='/img/radar.gif' height=300 />
+				</section>
+				<section>
+					<h2>Fields that use <span class="highlight"> Digital Image Processing</span></h2>
+					<h3>Ultrasound</h3>
+					<img src='/img/ultrasound.jpg' />
+				</section>
+				<section>
+					<h2>Electromagnetic Spectrum</h2>
+					<p><b>Gamma</b>: nuclear medicine, astronomical observations</p>
+					<p><b>Xray</b></p>
+					<p><b>Ultraviolet</b>: lithograpy, microscopy, astronomy</p>
+					<p><b>Visible</b>: industry, law enforcement</p>
+					<p><b>Infrared</b>: remote sensing, astronomy</p>
+					<p><b>Microwave</b>: radar</p>
+					<p><b>Radio</b>: medicine</p>
+					<p><b>Ultrasound</b></p>
+				</section>
+				<section>
+					<h2>Fundamental Steps in Digital Image Processing</h2>
+					<img src='/img/dipsteps.png' />
+				</section>
+				<section>
+					<h2>Visual Perception</h2>
+					<h3>The Eye</h3>
+					<img src='/img/eye.jpg' />
+				</section>
+				<section>
+					<h2>Visual Perception</h2>
+					<h3>Image Formation</h3>
+					<img src='/img/imageformation.jpg' />
+				</section>
+				<section>
+					<h2>Visual Perception</h2>
+					<h3>Brightness and Contrast</h3>
+					<img src='/img/machbands.jpg' />
+				</section>
+				<section>
+					<h2>Visual Perception</h2>
+					<h3>Brightness and Contrast</h3>
+					<img src='/img/simultaneouscontrast.jpg' />
+				</section>
+				<section>
+					<h2>Terminologies</h2>
+					<p>achromatic vs chromatic light</p>
+					<p>gray level or intensity</p>
+					<p>radiance</p>
+					<p>luminance</p>
+					<p>brightness</p>
+				</section>
+				<section>
+					<h2>Image Acquisition</h2>
+					<p>Single Sensor</p>
+					<p>Sensor Strip</p>
+					<p>Sensor Arrays</p>
+					<img src='/img/sensorstrip.jpg' />
+				</section>
+				<section>
+					<h2>Image Sampling and Quantization</h2>
+					<img src='/img/quantization.jpg' />
+				</section>
+				<section>
+					<h2>Image Sampling and Quantization</h2>
+					<img src='/img/samplequant.png' />
+				</section>
+				<section>
+					<h2>Representing Digital Images</h2>
+					<img src='/img/digitalimagerepresentation.png' height=400 />
+				</section>
+				<section>
+					<h2>Representing Digital Images</h2>
+					<img src='/img/imagematrix.png' />
+				</section>
+				<section>
+					<h2>Representing Digital Images</h2>
+					<p><b>Dynamic range</b> - ratio maximum measurable intensity to minimum measurable intensity </p>
+				</section>
+				<section>
+					<h2>Representing Digital Images</h2>
+					<p>b = M x N x k</p>
+					<img src='/img/imagesize.png' />
+				</section>
+				<section>
+					<h2>Spatial and Intensity Resolution</h2>
+					<img src='/img/spatialresolution.png' height=400 />
+				</section>
+				<section>
+					<h2>Spatial and Intensity Resolution</h2>
+					<img src='/img/intensityresolution.png' height=400 />
+				</section>
+				<section>
+					<h2>Spatial and Intensity Resolution</h2>
+					<h3>Image Interpolation</h3>
+					<p>use known data to estimate values at unknown locations</p>
+				</section>
+				<section>
+					<h2>Spatial and Intensity Resolution</h2>
+					<h3>Image Interpolation</h3>
+					<p>Nearest Neighbor</p>
+					<p>Bilinear</p>
+				</section>
+				<section>
+					<h2>Basic Pixel Relationships</h2>
+					<p>Neighbors, adjacency, connectivity, region</p>
+					<p>foreground, background</p>
+					<p>boundary</p>
+				</section>
+				<section>
+					<h2>Math Concepts for Image Processing</h2>
+					<h3>Arrays and Matrix Operations</h3>
+					<img src='/img/arrayproduct.png' />
+				</section>
+				<section>
+					<h2>Math Concepts for Image Processing</h2>
+					<h3>Arrays and Matrix Operations</h3>
+					<img src='/img/matrixproduct.png' />
+				</section>
+				<section>
+					<h2>Math Concepts for Image Processing</h2>
+					<h3>Linear vs Nonlinear Operations</h3>
+					<img src='/img/linearoperator.png' />
+				</section>
+				<section>
+					<h2>Math Concepts for Image Processing</h2>
+					<h3>Arithmetic, Set, and Logical Operations</h3>
+				</section>
+				<section>
+					<h2>Pixel Operations</h2>
+					<h3>Geometric Spatial Transformations</h3>
+					<img src='/img/affine.png' />
+				</section>
+				<section>
+					<h2>Pixel Operations</h2>
+					<h3>Geometric Spatial Transformations</h3>
+					<img src='/img/affinetransforms.png' height=500 />
+				</section>
+				<section>
+					<h2>Image Transforms</h2>
+					<img src='/img/lineartransform.png' />
+				</section>
+				<section>
+					<h2>Image Transforms</h2>
+					<h3>Forward Transform</h3>
+					<img src='/img/forwardtransform.png' />
+				</section>
+				<section>
+					<h2>Image Transforms</h2>
+					<h3>Inverse Transform</h3>
+					<img src='/img/inversetransform.png' />
+				</section>
+				<section>
+					<h2>Image Transforms</h2>
+					<h3>Separability</h3>
+					<p>r(x,y,u,v) = r1(x,y)r2(u,v)</p>
+				</section>
+				<section>
+					<h2>Image Transforms</h2>
+					<h3>Symmetry</h3>
+					<p>r(x,y,u,v) = r1(x,y)r1(u,v)</p>
+				</section>
+				<section>
+					<h2>Image Transforms (Matrix form)</h2>
+					<h3>Forward Transform</h3>
+					<p>T = AFA</p>
+				</section>
+				<section>
+					<h2>Image Transforms (Matrix form)</h2>
+					<h3>Inverse Transform</h3>
+					<p>BTB = BAFAB<br/>F = BTB</p>
+				</section>
+				<section>
+					<h2><span class='highlight'>Next Meeting</span>: Intensity Transformations and Spatial Filtering</h2>
+				</section>
+			</div>
+		</div>
+
+		<script src="/lib/js/head.min.js"></script>
+		<script src="/js/reveal.js"></script>
+
+		<script>
+
+			// Full list of configuration options available at:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+				width: 1280,
+				height: 720,
+
+				transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+				// Optional reveal.js plugins
+				dependencies: [
+					{ src: '/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: '/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: '/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: '/plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: '/plugin/zoom-js/zoom.js', async: true },
+					{ src: '/plugin/notes/notes.js', async: true }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>
